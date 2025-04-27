@@ -27,6 +27,21 @@ Run the Development Server
 
 To run the server use node server.js
 
+API ENDPOINTS
+1. For Authentication
+2. For Movies
+
+Authentication Endpoints are --
+1. BaseUrl/auth/register
+2. BaseUrl/auth/login
+3. BaseUrl/auth/refresh-token
+
+Movies EndPoints are --
+1.BaseUrl/movies (GET)
+2.BaseUrl/movies (POST Create Movie)
+3.BaseUrl/movies/{id} (GET Movie by id)
+4.BaseUrl/movies/{id}/rate (POST movie ratings)
+
 🔐 JWT Authentication Flow
 
 Registration
