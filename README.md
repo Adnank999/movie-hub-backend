@@ -38,8 +38,11 @@ Authentication Endpoints are --
 
 Movies EndPoints are --
 1.BaseUrl/movies (GET)
+
 2.BaseUrl/movies (POST Create Movie)
+
 3.BaseUrl/movies/{id} (GET Movie by id)
+
 4.BaseUrl/movies/{id}/rate (POST movie ratings)
 
 🔐 JWT Authentication Flow
