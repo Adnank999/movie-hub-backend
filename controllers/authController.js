@@ -21,16 +21,9 @@ export const register = async (req, res) => {
 
   await user.save();
 
-  const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRATION,
-  });
-  const refreshToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_REFRESH_EXPIRATION,
-  });
 
-  res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true });
 
-  res.status(201).json({ message: "Registration successful", accessToken });
+  res.status(201).json({ message: "Registration successful" });
 };
 
 export const login = async (req, res) => {
@@ -45,7 +38,7 @@ export const login = async (req, res) => {
   if (!isMatch) {
     return res.status(400).json({ message: "Invalid credentials" });
   }
-
+  
   const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRATION,
   });
